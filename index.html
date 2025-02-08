@@ -1,13 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>TrackMate</title>
-    <link rel="stylesheet" href="src/input.css">
-    <link rel="stylesheet" href="src/output.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./src/input.css" />
+    <link rel="stylesheet" href="./src/output.css" />
+
+    <style>
+      @keyframes animate-fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeIn {
+        animation: animate-fadeIn 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="nav-con flex h-max p-4 gap-3">
+        <div id="logo" class="text-3xl ml-2">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+        <div id="logo-text">
+          <h1 class="flex items-center h-[40px] text-lg">TrackMate</h1>
+        </div>
+      </div>
+      <hr />
+    </nav>
+
+    <!-- Main Content -->
+    <main class="h-[80vh] flex items-center justify-center">
+      <div id="content " class="transition-all">
+        <div id="headings" class="font-bold text-4xl ml-2 mb-6 flex flex-col">
+          <div class="md:text-6xl md:flex md:gap-3">
+            <h1 class="mb-4">Manage Your</h1>
+            <h1 class="mb-4">Expence Easily with</h1>
+            <p class="mb-5">TrackMate</p>
+          </div>
+          <details class="p-2">
+            <summary class="text-lg font-thin mb-2 md:text-2xl">
+              learn more.
+            </summary>
+            <p class="text-sm font-normal md:text-2xl">
+              We are providing easiest way to manage expenses, Get a full view
+              so you know where to save.
+            </p>
+            <p class="text-sm font-normal md:text-2xl hidden md:block">
+              Detect fraud keep tabs on rising subscription costs.
+            </p>
+          </details>
+        </div>
+        <div class="text-center mt-10 flex flex-col items-center">
+          <button
+            id="showInput"
+            class="w-[150px] mb-5 border p-3 hover:bg-white hover:text-black duration-200 md:w-[200px] md:p-5 md:text-2xl md:hover:font-normal md:font-bold"
+            onclick="showInputs();"
+          >
+            Get Started
+          </button>
+          <div id="input-con" class="md:mt-5 mb-8 hidden">
+            <input
+              type="text"
+              id="username"
+              class="border mb-5 p-3 focus:outline-none md:mr-8 md:p-5"
+              placeholder="Enter your name"
+              onkeypress="handel(event);"
+            />
+            <input
+              type="number"
+              id="balance"
+              class="border p-3 focus:outline-none md:p-5"
+              placeholder="Enter your Balance"
+            />
+          </div>
+          <button
+            class="border p-3 bg-white text-black font-light rounded-md w-[90px] md:w-[140px] text-2xl md:text-2xl md:font-medium hover:translate-x-3 duration-200 hidden"
+            onclick="TrackExpence();"
+            id="TrackExpence"
+          >
+            Enter
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+
+    function showInputs() {
+      console.log("clicked");
+      const showBtn = document.getElementById("showInput");
+      const inputCon = document.getElementById("input-con");
+      const enter = document.getElementById("TrackExpence");
+      console.log(inputCon);
+      showBtn.innerHTML = showBtn.innerText == "Close" ? "Get Started" : "Close";
+      inputCon.classList.toggle("hidden");
+      enter.classList.toggle("hidden");
+      inputCon.classList.toggle("animate-fadeIn");
+      enter.classList.toggle("animate-fadeIn");
+    }
+  </script>
 </html>
