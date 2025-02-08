@@ -1,2 +1,2 @@
-# -Expense-tracker
-Take a look on my   TrackMate - Expense Tracker
+# Expense-tracker
+Take a look on my TrackMate - Expense Tracker
