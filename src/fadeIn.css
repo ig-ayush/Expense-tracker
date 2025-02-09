@@ -1,0 +1,44 @@
+/* Index.html */
+@keyframes animate-fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeIn {
+    animation: animate-fadeIn .9s ease-in-out;
+  }
+
+  /* Main Page */
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .load {
+    animation: fadeIn .6s ease-in-out;
+  }
+
+  ul{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  li{
+    margin-top: 25px;
+    display: flex;
+    justify-content:space-between;
+  }
+
+  li button i{
+    color: red;
+  }

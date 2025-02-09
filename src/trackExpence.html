@@ -3,24 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>Expence Tracker</title>
     <link rel="stylesheet" href="input.css">
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="fadeIn.css">
+    <style>
+       
+    </style>
 </head>
 <body>
    <!-- Nav -->
-    <nav class="p-5 md:p-7">
+    <nav class="p-5 md:p-7 w-[50px]">
         <button class="border p-1 md:p-3 bg-white text-black  rounded-md w-[100px] font-bold md:w-[140px] text-lg md:text-2xl md:font-medium hover:translate-x-3 duration-200" onclick="Home();">
         <- Home</button>
     </nav>
         <hr>
-
     <!-- Expences  -->
-    <div>
-        <div>
-            
+    <main class="h-[220px] flex  flex-col justify-center  ml-5 ">
+        <div id="profile" class="flex gap-3 text-2xl  items-center">
+            <i class="fa-solid fa-user"></i>
+            <p id="Username" class="text-lg mt-2"></p>
         </div>
-    </div>
+        <br>
+        <div id="totalbal" class="border w-[90vw] p-5" >
+            <p class="mb-2">Total Balance</p>
+            <section id="bal" class="flex gap-3 items-center">
+                <p class="text-5xl ">&#8377;</p>
+                <h1 id="balance" class="text-5xl"></h1>
+            </section>
+        </div>
+    </main>
+    <br>
+    <main id="tracker" class="flex items-center flex-col">
+        <div id="container" class="flex flex-col gap-4 border-b pb-6">
+            <h1 class="text-center text-2xl">Expence Tracker</h1>
+            <input type="text" id="expence-name" placeholder="Expence name" class="border p-2 outline-none">
+            <input type="number" id="amount" placeholder="Amount" class="border p-2 outline-none">
+            <div class="text-center">
+                <button id="add-expence" class=" mt-2 p-2 w-max bg-white text-black font-bold rounded-xl">Add Expence</button>
+            </div>
+        </div>
+    </main>
+    <ul id="list">
+        
+    </ul>
 </body>
 <script src="expenceTracker.js"></script>
 </html>
