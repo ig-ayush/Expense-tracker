@@ -27,7 +27,7 @@
         }
       }
       .animate-fadeIn {
-        animation: animate-fadeIn 0.5s ease-in-out;
+        animation: animate-fadeIn .9s ease-in-out;
       }
     </style>
   </head>
@@ -35,11 +35,11 @@
     <!-- Navbar -->
     <nav>
       <div class="nav-con flex h-max p-4 gap-3">
-        <div id="logo" class="text-3xl ml-2">
+        <div id="logo" class="text-3xl ml-2 md:text-4xl">
           <i class="fa-solid fa-clipboard-list"></i>
         </div>
         <div id="logo-text">
-          <h1 class="flex items-center h-[40px] text-lg">TrackMate</h1>
+          <h1 class="flex items-center h-[40px] text-lg md:text-2xl">TrackMate</h1>
         </div>
       </div>
       <hr />
@@ -70,7 +70,7 @@
         <div class="text-center mt-10 flex flex-col items-center">
           <button
             id="showInput"
-            class="w-[150px] mb-5 border p-3 hover:bg-white hover:text-black duration-200 md:w-[200px] md:p-5 md:text-2xl md:hover:font-normal md:font-bold"
+            class="w-[150px] mb-5 border p-3 hover:bg-white hover:text-black duration-250 md:w-[200px] md:p-5 md:text-2xl md:hover:font-normal md:font-bold"
             onclick="showInputs();"
           >
             Get Started
@@ -91,11 +91,11 @@
             />
           </div>
           <button
-            class="border p-3 bg-white text-black font-light rounded-md w-[90px] md:w-[140px] text-2xl md:text-2xl md:font-medium hover:translate-x-3 duration-200 hidden"
+            class="border p-3 bg-white text-black font-light rounded-md w-[120px] md:w-[140px] text-2xl md:text-2xl md:font-medium hover:translate-x-3 duration-200 hidden"
             onclick="TrackExpence();"
             id="TrackExpence"
           >
-            Enter
+            Enter ->
           </button>
         </div>
       </div>
@@ -103,17 +103,42 @@
   </body>
   <script>
 
+    const inputCon = document.getElementById("input-con");
+    const enter = document.getElementById("TrackExpence");
     function showInputs() {
-      console.log("clicked");
       const showBtn = document.getElementById("showInput");
-      const inputCon = document.getElementById("input-con");
-      const enter = document.getElementById("TrackExpence");
-      console.log(inputCon);
-      showBtn.innerHTML = showBtn.innerText == "Close" ? "Get Started" : "Close";
+      showBtn.innerHTML = showBtn.innerText == "Clear" ? "Get Started" : "Clear";
       inputCon.classList.toggle("hidden");
       enter.classList.toggle("hidden");
       inputCon.classList.toggle("animate-fadeIn");
       enter.classList.toggle("animate-fadeIn");
+
+      showBtn.addEventListener('click',()=>{
+        localStorage.clear("Name");
+        if(localStorage.clear){
+          document.getElementById('username').value = "";
+          document.getElementById('balance').value = "";
+        } 
+      })
+    }
+    
+    function TrackExpence(){
+      let name = document.getElementById('username').value;
+      let balance = document.getElementById('balance').value;
+
+      if(name != "" && balance != ""){
+       localStorage.setItem("Name",name);
+       localStorage.setItem("Balance",balance);
+      }else{
+        return;
+      }
+      window.location.href = "./src/trackExpence.html";
+    };
+
+    if(localStorage.getItem('Name') && localStorage.getItem('Balance')){
+
+      document.getElementById('username').value = localStorage.getItem('Name');
+      document.getElementById('balance').value = localStorage.getItem('Balance');
     }
   </script>
 </html>
