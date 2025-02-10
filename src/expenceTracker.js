@@ -50,7 +50,24 @@ const displayExpenses = () =>{
         <span>&#8377; ${expence.amount} </span>`;
         list.appendChild(item);
         list.appendChild(hr);
+         let i = 0;
+
+            let ExLen = expenceData.length - 1;
+            let Bal = Number(balance.innerText);
+            let DisplayBalance = Bal - Number(expenceData[ExLen].amount);
+            console.log(expenceData[ExLen].amount);
+            balance.innerText = DisplayBalance;
+            localStorage.setItem('Balance',DisplayBalance);
+        
     });
 };
 
-document.addEventListener('DOMContentLoaded',displayExpenses);
+window.deleteExpencce = (index) =>{
+
+    expenceData.splice(index,1);
+    localStorage.setItem("Expences",JSON.stringify(expenceData));
+    displayExpenses();
+};
+
+document.addEventListener('DOMContentLoaded',displayExpenses)
+
