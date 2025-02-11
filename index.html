@@ -66,7 +66,6 @@
               id="username"
               class="border mb-5 p-3 focus:outline-none md:mr-8 md:p-5"
               placeholder="Enter your name"
-              onkeypress="handel(event);"
             />
             <input
               type="number"
@@ -90,6 +89,7 @@
 
     const inputCon = document.getElementById("input-con");
     const enter = document.getElementById("TrackExpence");
+    
     function showInputs() {
       const showBtn = document.getElementById("showInput");
       showBtn.innerHTML = showBtn.innerText == "Clear" ? "Get Started" : "Clear";

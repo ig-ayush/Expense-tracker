@@ -43,19 +43,32 @@
         </div>
     </main>
     <br>
-    <main id="tracker" class="flex items-center flex-col">
-        <div id="container" class="flex flex-col gap-4 border-b pb-6">
+    <main id="tracker" class="flex p-10 flex-col">
+        <div id="container" class="flex flex-col gap-4 border-b pb-7">
             <h1 class="text-center text-2xl">Expence Tracker</h1>
             <input type="text" id="expence-name" placeholder="Expence name" class="border p-2 outline-none">
             <input type="number" id="amount" placeholder="Amount" class="border p-2 outline-none">
             <div class="text-center">
-                <button id="add-expence" class=" mt-2 p-2 w-max bg-white text-black font-bold rounded-xl">Add Expence</button>
+                <button id="add-expence" class=" mt-2 p-2 w-max bg-white text-black text-xm font-medium rounded-xl">Add Expence</button>
+
+                <button id="edit-balance" class=" mt-2 p-2 w-max bg-white text-black font-medium rounded-xl ml-2">Edit Balance</button>
+            
+            </div>
+            <!--  Edit Balance -->
+            <div class="text-center  flex gap-3 items-center hidden" id="input-bal">
+                <input type="number" placeholder="Expence Balance" class="border p-2 outline-none mt-5 mb-2 p-2" id="newBal">
+
+                <button  class=" mt-2 h-max  w-max bg-white text-black font-medium rounded-xl p-3" id="add-bal">Add</button>
             </div>
         </div>
     </main>
     <ul id="list">
         
     </ul>
+    <div class="text-center">
+        <button  class=" mt-2 h-max  w-max bg-white text-black font-medium rounded-xl p-3" id="clear">Clear all</button>
+    </div>
+    <br>
 </body>
 <script src="expenceTracker.js"></script>
 </html>
