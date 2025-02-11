@@ -18,8 +18,7 @@ Take control of your finances with TrackMate >
 - ✅ Fully responsive design for all devices
 
 <br>
- Future Enhancements
-🔹 Local storage support – Save expenses even after closing the browser
-🔹 Category-wise tracking – Organize expenses into different categories
+
+
 
 
