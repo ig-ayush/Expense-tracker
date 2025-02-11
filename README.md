@@ -8,4 +8,15 @@ Take control of your finances with TrackMate >
  <br>
  We are providing easiest way to manage expenses, Get a full view so you know where to save.
 <br>
-This is a Mobile-Based Expense Tracker built using JavaScript, HTML, and CSS. It allows users to track their expenses by entering the amount and description, which gets stored in the browser's localStorage. The app dynamically updates the total balance and displays the last recorded expense.
+ Features
+✅ Add and delete expenses effortlessly
+✅ Track total expenses in real-time
+✅ Minimal and user-friendly interface
+✅ Fully responsive design for all devices
+
+<br>
+ Future Enhancements
+🔹 Local storage support – Save expenses even after closing the browser
+🔹 Category-wise tracking – Organize expenses into different categories
+
+
