@@ -66,31 +66,49 @@ window.deleteExpencce = (index) =>{
 };
 
 // Edit Balance
-const balanceEdit = document.getElementById('edit-balance');
-const addBal = document.getElementById('add-bal');
-const balInput = document.getElementById('input-bal');
-addBal.addEventListener('click',()=>{
-    const newBal = document.getElementById('newBal').value;
-    balance.innerText = newBal;
-    localStorage.setItem("Balance",newBal);
-    balInput.classList.add('hidden');
+const Edit  = document.getElementById('edit');
+const options = document.getElementById('edit-options');
+
+const add_balBtn = document.getElementById('add-bal');
+const edit_balBtn = document.getElementById('edit-bal');
+
+const add_bal = document.getElementById('add-new-input');
+const add_bal_btn = document.getElementById('add-bal-btn');
+
+const edit_bal = document.getElementById('add-edit-input');
+const edit_bal_btn = document.getElementById('add-bal-btn');
+
+// Edit Button
+Edit.addEventListener('click',()=>{
+    options.classList.toggle('hidden');
+    add_bal.classList.add('hidden');
+    edit_bal.classList.add('hidden');
+    options.classList.add('animate-fadeIn');
 });
 
-balanceEdit.addEventListener('click',()=>{
-
-    balInput.classList.remove('hidden');
-    balInput.classList.add('load');
+add_balBtn.addEventListener('click',()=>{
+    add_bal.classList.toggle('hidden');
+    add_bal.classList.add('animate-fadeIn');
+    edit_bal.classList.add('hidden');
 });
 
-// Clear
+edit_balBtn.addEventListener('click',()=>{
+    edit_bal.classList.toggle('hidden');
+    edit_bal.classList.add('animate-fadeIn');
+    add_bal.classList.add('hidden');
+    
+});
+
+
+
+
+// clear Button
 const clear = document.getElementById('clear');
 
 clear.addEventListener('click',()=>{
-    console.log("clear")
-    localStorage.removeItem('Expence');
+    console.log(clear);
+    localStorage.removeItem('Expences');
     document.getElementById('list').innerHTML = "";
 });
 
-
-document.addEventListener('DOMContentLoaded',displayExpenses)
-
+document.addEventListener('DOMContentLoaded',displayExpenses);

@@ -28,12 +28,18 @@
         <hr>
 
     <!-- Expences  -->
+
+    <!--  Balance  and Profile -->
     <main class="h-[220px] flex  flex-col justify-center  ml-5 ">
+
+        <!-- Profile -->
         <div id="profile" class="flex gap-3 text-2xl  items-center">
             <i class="fa-solid fa-user"></i>
             <p id="Username" class="text-lg mt-2"></p>
         </div>
         <br>
+
+        <!-- Display Balance -->
         <div id="totalbal" class="border w-[90vw] p-5" >
             <p class="mb-2">Total Balance</p>
             <section id="bal" class="flex gap-3 items-center">
@@ -41,8 +47,35 @@
                 <h1 id="balance" class="text-5xl"></h1>
             </section>
         </div>
+        <br>
     </main>
-    <br>
+        <!-- Edit Balance -->
+      
+        <div id="edit" class="text-right mr-7">
+            <button id="editBtn" class="bg-white text-black p-1 rounded-md font-light w-[80px]">Edit <i class="fa-regular fa-pen-to-square"></i></button>
+        </div>
+       
+        <!-- New Balance Input -->
+         <div id="edit-options" class="flex gap-5 justify-center mt-5 hidden">
+            <button id="add-bal"  class="bg-white text-black p-2 rounded-md font-light ">Add Balance</button>
+            <button id="edit-bal" class="bg-white text-black p-2 rounded-md font-light ">Edit Balance</button>
+         </div>
+        
+            <!-- Add Balance -->
+         <div id="add-new-input" class="flex justify-center gap-3 mt-5 hidden">
+            <input type="number" id="new-bal-value" class="border p-2" placeholder="Enter the Balance">
+            <button id="add-bal-btn"  class="bg-white text-black p-2 rounded-md font-light 
+            text-xm">Add</button>
+         </div>
+
+         <!-- Edit Balance -->
+         <div id="add-edit-input" class="flex justify-center gap-3 mt-5 hidden">
+            <input type="number" id="edit-bal-value" class="border p-2" placeholder="Enter the Balance">
+            <button id="edit-bal-btn"  class="bg-white text-black p-2 rounded-md font-light 
+            text-xm">Add</button>
+         </div>
+
+    <!-- Add Expences -->
     <main id="tracker" class="flex p-10 flex-col">
         <div id="container" class="flex flex-col gap-4 border-b pb-7">
             <h1 class="text-center text-2xl">Expence Tracker</h1>
@@ -50,8 +83,6 @@
             <input type="number" id="amount" placeholder="Amount" class="border p-2 outline-none">
             <div class="text-center">
                 <button id="add-expence" class=" mt-2 p-2 w-max bg-white text-black text-xm font-medium rounded-xl">Add Expence</button>
-
-                <button id="edit-balance" class=" mt-2 p-2 w-max bg-white text-black font-medium rounded-xl ml-2">Edit Balance</button>
             
             </div>
             <!--  Edit Balance -->
@@ -65,9 +96,11 @@
     <ul id="list">
         
     </ul>
-    <div class="text-center">
-        <button  class=" mt-2 h-max  w-max bg-white text-black font-medium rounded-xl p-3" id="clear">Clear all</button>
-    </div>
+
+    <!-- Clear -->
+        <div class="text-center mt-5">
+            <button id="clear" class="bg-white text-black p-2 text-md rounded-md">Clear</button>
+        </div>
     <br>
 </body>
 <script src="expenceTracker.js"></script>
