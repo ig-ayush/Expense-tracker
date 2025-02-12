@@ -112,14 +112,4 @@ add_bal_btn.addEventListener('click',(e)=>{
     document.getElementById('new-bal-value').value = "";
 });
 
-
-// clear Button
-const clear = document.getElementById('clear');
-
-clear.addEventListener('click',()=>{
-    console.log(clear);
-    localStorage.removeItem('Expences');
-    document.getElementById('list').innerHTML = "";
-});
-
 document.addEventListener('DOMContentLoaded',displayExpenses);
