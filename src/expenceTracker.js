@@ -99,7 +99,18 @@ edit_balBtn.addEventListener('click',()=>{
     
 });
 
-
+// Add Buttons
+add_bal_btn.addEventListener('click',(e)=>{
+   
+    let new_bal = document.getElementById('new-bal-value').value;
+    console.log(new_bal);
+    let present_bal = balance.innerText;
+    let set_bal = Number(new_bal) + Number(present_bal);
+    localStorage.setItem('Balance',set_bal);
+    balance.innerText = set_bal;
+   
+    document.getElementById('new-bal-value').value = "";
+});
 
 
 // clear Button
