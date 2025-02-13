@@ -99,8 +99,8 @@ edit_balBtn.addEventListener('click',()=>{
     
 });
 
-// Add Buttons
-add_bal_btn.addEventListener('click',(e)=>{
+// Added Balance Add Buttons
+add_bal_btn.addEventListener('click',()=>{
    
     let new_bal = document.getElementById('new-bal-value').value;
     console.log(new_bal);
@@ -110,6 +110,13 @@ add_bal_btn.addEventListener('click',(e)=>{
     balance.innerText = set_bal;
    
     document.getElementById('new-bal-value').value = "";
+
+});
+
+// Edit Balance Add Button
+edit_balBtn.addEventListener('click',()=>{
+    let edit_b = document.getElementById('edit-bal-value').value;
+    console.log(edit_b);
 });
 
 document.addEventListener('DOMContentLoaded',displayExpenses);
