@@ -66,7 +66,7 @@ window.deleteExpencce = (index) =>{
 };
 
 // Edit Balance
-const Edit  = document.getElementById('edit');
+const Edit  = document.getElementById('editBtn');
 const options = document.getElementById('edit-options');
 
 const add_balBtn = document.getElementById('add-bal');
@@ -76,7 +76,7 @@ const add_bal = document.getElementById('add-new-input');
 const add_bal_btn = document.getElementById('add-bal-btn');
 
 const edit_bal = document.getElementById('add-edit-input');
-const edit_bal_btn = document.getElementById('add-bal-btn');
+const edit_bal_btn = document.getElementById('edit-bal-btn');
 
 // Edit Button
 Edit.addEventListener('click',()=>{
@@ -114,9 +114,12 @@ add_bal_btn.addEventListener('click',()=>{
 });
 
 // Edit Balance Add Button
-edit_balBtn.addEventListener('click',()=>{
+edit_bal_btn.addEventListener('click',()=>{
     let edit_b = document.getElementById('edit-bal-value').value;
     console.log(edit_b);
+    let new_bal = Number(edit_b);
+    localStorage.setItem('Balance',new_bal);
+    balance.innerText = new_bal;
 });
 
 document.addEventListener('DOMContentLoaded',displayExpenses);
