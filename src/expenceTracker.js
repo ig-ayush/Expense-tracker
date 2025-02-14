@@ -128,16 +128,13 @@ edit_bal_btn.addEventListener('click',()=>{
 
 document.addEventListener('DOMContentLoaded',displayExpenses);
 
-function checkDevice() {
-    if (window.innerWidth > 768) {
-        // Show the warning message for desktops
-        document.getElementById("desktopWarning").classList.remove("hidden");
-        document.getElementById("mobileContent").classList.add("hidden");
+// <!-- Desktop Warnning -->
+function checkDevice(){
+    if(window.innerWidth > 768){
+        document.getElementById('warnning').classList.remove('hidden');
+        document.getElementById('warnning').classList.add('animate-fadeIn');
     }
 }
 
-// Run check on load
 checkDevice();
-
-// Run check when window resizes
-window.addEventListener("resize", checkDevice);
+window.addEventListener('resize',checkDevice);

@@ -43,9 +43,13 @@ if(localStorage.getItem('Name') && localStorage.getItem('Balance')){
   document.getElementById('balance').value = localStorage.getItem('Balance');
 }
 
+// <!-- Desktop Warnning -->
 function checkDevice(){
     if(window.innerWidth > 768){
         document.getElementById('warnning').classList.remove('hidden');
-        document.getElementById('warnning').classList.add('load');
+        document.getElementById('warnning').classList.add('animate-fadeIn');
     }
 }
+
+checkDevice();
+window.addEventListener('resize',checkDevice);
