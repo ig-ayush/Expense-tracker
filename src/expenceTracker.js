@@ -32,6 +32,11 @@ addExpence.addEventListener('click',function(){
         };
         expenceData.push(data);
         localStorage.setItem("Expences",JSON.stringify(expenceData));
+        let ExLen = expenceData.length - 1;
+        let DisplayBalance = Number(balance.innerText) - Number(expenceData[ExLen].amount);
+        balance.innerText = DisplayBalance;
+        localStorage.setItem('Balance',DisplayBalance);
+
         displayExpenses();
     }else{
         alert("You did't fill the details");
@@ -52,10 +57,7 @@ const displayExpenses = () =>{
         list.appendChild(hr);
         });
 
-        let ExLen = expenceData.length - 1;
-        let DisplayBalance = Number(balance.innerText) - Number(expenceData[ExLen].amount);
-        balance.innerText = DisplayBalance;
-        localStorage.setItem('Balance',DisplayBalance);
+       
 };
 
 window.deleteExpencce = (index) =>{

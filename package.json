@@ -4,7 +4,7 @@
   "description": "<h2>Take a look on my TrackMate - Expense Tracker</h2>\r <br>\r Take control of your finances with TrackMate >\r <br>\r <br>\r  A simple and efficient expense tracker designed to help you monitor your spending, categorize expenses, and stay within budget.",
   "main": "index.js",
   "scripts": {
-    "debug":"npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "debug":"npx @tailwindcss/cli -i ./src/input.css -o ./src/tailwind.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
