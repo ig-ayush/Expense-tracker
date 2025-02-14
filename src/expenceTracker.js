@@ -110,7 +110,7 @@ add_bal_btn.addEventListener('click',()=>{
     balance.innerText = set_bal;
    
     document.getElementById('new-bal-value').value = "";
-
+    
 });
 
 // Edit Balance Add Button
@@ -120,6 +120,8 @@ edit_bal_btn.addEventListener('click',()=>{
     let new_bal = Number(edit_b);
     localStorage.setItem('Balance',new_bal);
     balance.innerText = new_bal;
+
+    document.getElementById('edit-bal-value').value = "";
 });
 
 document.addEventListener('DOMContentLoaded',displayExpenses);
