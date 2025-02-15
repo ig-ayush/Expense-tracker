@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -12,98 +12,153 @@
     />
 
     <title>Expence Tracker</title>
-    <link rel="stylesheet" href="input.css">
-    <link rel="stylesheet" href="tailwind.css">
-    <link rel="stylesheet" href="fadeIn.css">
-    <style>
-       
-    </style>
-</head>
-<body>
-   <!-- Nav -->
+    <link rel="stylesheet" href="input.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <link rel="stylesheet" href="fadeIn.css" />
+    <style></style>
+  </head>
+  <body>
+    <!-- Nav -->
     <nav class="p-5 md:p-7 w-[50px]">
-        <button class="border p-1 md:p-3 bg-white text-black  rounded-md w-[100px] font-bold md:w-[140px] text-lg md:text-2xl md:font-medium hover:translate-x-3 duration-200" onclick="Home();">
-        <- Home</button>
+      <button
+        class="border p-1 md:p-3 bg-white text-black rounded-md w-[100px] font-bold md:w-[140px] text-lg md:text-2xl md:font-medium hover:translate-x-3 duration-200"
+        onclick="Home();"
+      >
+        <- Home
+      </button>
     </nav>
-        <hr>
+    <hr />
 
     <!-- Expences  -->
 
     <!--  Balance  and Profile -->
-    <main class="h-[220px] flex  flex-col justify-center  ml-5 ">
+    <main class="h-[220px] flex flex-col justify-center ml-5">
+      <!-- Profile -->
+      <div id="profile" class="flex gap-3 text-2xl items-center">
+        <i class="fa-solid fa-user"></i>
+        <p id="Username" class="text-lg mt-2"></p>
+      </div>
+      <br />
 
-        <!-- Profile -->
-        <div id="profile" class="flex gap-3 text-2xl  items-center">
-            <i class="fa-solid fa-user"></i>
-            <p id="Username" class="text-lg mt-2"></p>
-        </div>
-        <br>
-
-        <!-- Display Balance -->
-        <div id="totalbal" class="border w-[90vw] p-5" >
-            <p class="mb-2">Total Balance</p>
-            <section id="bal" class="flex gap-3 items-center">
-                <p class="text-5xl ">&#8377;</p>
-                <h1 id="balance" class="text-5xl"></h1>
-            </section>
-        </div>
-        <br>
+      <!-- Display Balance -->
+      <div id="totalbal" class="border w-[90vw] p-5">
+        <p class="mb-2">Total Balance</p>
+        <section id="bal" class="flex gap-3 items-center">
+          <p class="text-5xl">&#8377;</p>
+          <h1 id="balance" class="text-5xl"></h1>
+        </section>
+      </div>
+      <br />
     </main>
     <div id="message" class="text-center mb-5 hidden">
-        <p class="text-sm text-red-500 " >Oops! You don't have enough balance  </p>
+      <p class="text-sm text-red-500">Oops! You don't have enough balance</p>
     </div>
-        <!-- Edit Balance -->
-      
-        <div id="edit" class="text-right mr-7 md:mr-50">
-            <button id="editBtn" class="bg-white text-black p-1 rounded-md font-light w-[80px]">Edit <i class="fa-regular fa-pen-to-square"></i></button>
-        </div>
-       
-        <!-- New Balance Input -->
-         <div id="edit-options" class="flex gap-5 justify-center mt-5 hidden">
-            <button id="add-bal"  class="bg-white text-black p-2 rounded-md font-light ">Add Balance</button>
-            <button id="edit-bal" class="bg-white text-black p-2 rounded-md font-light ">Edit Balance</button>
-         </div>
-        
-            <!-- Add Balance -->
-         <div id="add-new-input" class="flex justify-center gap-3 mt-5 hidden">
-            <input type="number" id="new-bal-value" class="border p-2 outline-none" placeholder="Enter the Balance">
+    <!-- Edit Balance -->
 
-            <button id="add-bal-btn"  class="bg-white text-black p-2 rounded-md font-light 
-            text-xm">Add</button>
-         </div>
+    <div id="edit" class="text-right mr-7 md:mr-50">
+      <button
+        id="editBtn"
+        class="bg-white text-black p-1 rounded-md font-light w-[80px]"
+      >
+        Edit <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+    </div>
 
-         <!-- Edit Balance -->
-         <div id="add-edit-input" class="flex justify-center gap-3 mt-5 hidden">
-            <input type="number" id="edit-bal-value" class="border p-2 outline-none" placeholder="Enter the Balance">
+    <!-- New Balance Input -->
+    <div id="edit-options" class="flex gap-5 justify-center mt-5 hidden">
+      <button
+        id="add-bal"
+        class="bg-white text-black p-2 rounded-md font-light"
+      >
+        Add Balance
+      </button>
+      <button
+        id="edit-bal"
+        class="bg-white text-black p-2 rounded-md font-light"
+      >
+        Edit Balance
+      </button>
+    </div>
 
-            <button id="edit-bal-btn"  class="bg-white text-black p-2 rounded-md font-light 
-            text-xm">Add</button>
-         </div>
+    <!-- Add Balance -->
+    <div id="add-new-input" class="flex justify-center gap-3 mt-5 hidden">
+      <input
+        type="number"
+        id="new-bal-value"
+        class="border p-2 outline-none"
+        placeholder="Enter the Balance"
+      />
+
+      <button
+        id="add-bal-btn"
+        class="bg-white text-black p-2 rounded-md font-light text-xm"
+      >
+        Add
+      </button>
+    </div>
+
+    <!-- Edit Balance -->
+    <div id="add-edit-input" class="flex justify-center gap-3 mt-5 hidden">
+      <input
+        type="number"
+        id="edit-bal-value"
+        class="border p-2 outline-none"
+        placeholder="Enter the Balance"
+      />
+
+      <button
+        id="edit-bal-btn"
+        class="bg-white text-black p-2 rounded-md font-light text-xm"
+      >
+        Add
+      </button>
+    </div>
 
     <!-- Add Expences -->
     <main id="tracker" class="flex p-10 flex-col">
-        <div id="container" class="flex flex-col gap-4 border-b pb-7">
+      <div id="container" class="flex flex-col gap-4 border-b pb-7">
+        <h1 class="text-center text-2xl">Expence Tracker</h1>
 
-            <h1 class="text-center text-2xl">Expence Tracker</h1>
+        <input
+          type="text"
+          id="expence-name"
+          placeholder="Expence name"
+          class="border p-2 outline-none"
+          autocomplete="off"
+        />
 
-            <input type="text" id="expence-name" placeholder="Expence name" class="border p-2 outline-none" autocomplete="off">
+        <input
+          type="number"
+          id="amount"
+          placeholder="Amount"
+          class="border p-2 outline-none"
+        />
 
-            <input type="number" id="amount" placeholder="Amount" class="border p-2 outline-none">
-
-            <div class="text-center">
-                <button id="add-expence" class=" mt-2 p-2 w-max bg-white text-black text-xm font-medium rounded-xl">Add Expence</button>
-            </div>
-
+        <div class="text-center">
+          <button
+            id="add-expence"
+            class="mt-2 p-2 w-max bg-white text-black text-xm font-medium rounded-xl"
+          >
+            Add Expence
+          </button>
         </div>
+      </div>
     </main>
     <ul id="list"></ul>
-    <br>
+    <br />
     <!-- Desktop Warnning -->
-    <div id="warnning" class="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black text-white font-bold text-3xl gap-3 hidden">
-      
-        <h1> <i class="fa-solid fa-triangle-exclamation text-4xl text-red-500 "></i>&nbsp; &nbsp;This App is for Mobile Devices Only</h1>
-        <p>Open this on a Mobile Phone or resize your browser to a mobile width.</p>
-      </div>
-</body>
-<script src="expenceTracker.js"></script>
+    <div
+      id="warnning"
+      class="fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-black text-white font-bold text-3xl gap-3 hidden"
+    >
+      <h1>
+        <i class="fa-solid fa-triangle-exclamation text-4xl text-red-500"></i
+        >&nbsp; &nbsp;This App is for Mobile Devices Only
+      </h1>
+      <p>
+        Open this on a Mobile Phone or resize your browser to a mobile width.
+      </p>
+    </div>
+  </body>
+  <script src="expenceTracker.js"></script>
 </html>
