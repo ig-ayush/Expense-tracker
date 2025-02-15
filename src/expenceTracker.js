@@ -24,20 +24,32 @@ addExpence.addEventListener('click',function(){
 
     const expence = document.getElementById('expence-name').value;
     const amount = document.getElementById('amount').value;
-    
+    const warnningMsg = document.getElementById('message');
     if(expence != "" && amount != ""){
         let data = {
             expence,
             amount
         };
-        expenceData.push(data);
-        localStorage.setItem("Expences",JSON.stringify(expenceData));
-        let ExLen = expenceData.length - 1;
-        let DisplayBalance = Number(balance.innerText) - Number(expenceData[ExLen].amount);
-        balance.innerText = DisplayBalance;
-        localStorage.setItem('Balance',DisplayBalance);
 
-        displayExpenses();
+            expenceData.push(data);
+            localStorage.setItem("Expences",JSON.stringify(expenceData));
+            let ExLen = expenceData.length - 1;
+            let DisplayBalance = Number(balance.innerText) - Number(expenceData[ExLen].amount);
+            
+            if(DisplayBalance < 0){
+                warnningMsg.classList.remove('hidden');
+                expenceData.pop();
+                localStorage.setItem("Expences",JSON.stringify(expenceData));
+                
+            }else{
+                warnningMsg.classList.add('hidden')
+                console.log(expenceData[ExLen])
+                balance.innerText = DisplayBalance;
+                localStorage.setItem('Balance',DisplayBalance);
+                
+                displayExpenses();
+            }
+        
     }else{
         alert("You did't fill the details");
     }
