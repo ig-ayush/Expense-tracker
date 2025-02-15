@@ -41,7 +41,7 @@ if (localStorage.getItem("Name") && localStorage.getItem("Balance")) {
   document.getElementById("balance").value = localStorage.getItem("Balance");
 }
 
-// <!-- Desktop Warnning -->
+// Desktop Warnning 
 function checkDevice() {
   if (window.innerWidth > 768) {
     document.getElementById("warnning").classList.remove("hidden");

@@ -131,7 +131,7 @@ edit_bal_btn.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", displayExpenses);
 
-// <!-- Desktop Warnning -->
+// Desktop Warnning
 function checkDevice() {
   if (window.innerWidth > 768) {
     document.getElementById("warnning").classList.remove("hidden");
