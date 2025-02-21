@@ -54,5 +54,5 @@ EXPENSE-TRACKER/
 ##  Contributing
 Feel free to **fork** the repository and submit pull requests if you'd like to contribute improvements.
 
-``` Ayush Acharya ```
+``` Ayush Acharya ``` 
 
